@@ -40,6 +40,7 @@ namespace Baldwin_Asg4_Poker
 
         private void buildDeck()
         {
+            listCards.Clear();
             int Rank = 1;
             int imageListIndex = 0;
            

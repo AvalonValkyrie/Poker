@@ -14,17 +14,15 @@ namespace Baldwin_Asg4_Poker
         private int credits;
         private int bet;
         public enum Status { InitialDeal, Draw, Score };
-        public Deck deck = new Deck();
 
         public Game()
         {
-            buildPlayerHand();
             credits = 100;
             bet = 10;
 
         }
 
-        public void buildPlayerHand()
+        public void buildPlayerHand(Deck deck)
         {
             playerHand.Clear();
 
@@ -41,10 +39,9 @@ namespace Baldwin_Asg4_Poker
             return (List<Card>)playerHand;
         }
 
-        public void reloadHand()
+        public void reloadHand(Deck deck)
         {
-            deck.resetDeck();
-            buildPlayerHand();
+            buildPlayerHand(deck);
         }
 
         public int Credits { get => credits; set => credits = value; }

@@ -76,7 +76,7 @@ namespace Baldwin_Asg4_Poker
 
         private void redrawCards()
         {
-            game.reloadHand();
+            game.reloadHand(deck);
             playerHand = game.getPlayerHand();
         }
 
@@ -157,6 +157,9 @@ namespace Baldwin_Asg4_Poker
             numericUpDownBet.Enabled = false;
 
             game.Bet = (int)numericUpDownBet.Value;
+            game.Credits = game.Credits - game.Bet;
+            textBoxCredits.Text = game.Credits.ToString();
+            deck.resetDeck();
             redrawCards();
             displayCards();
             
